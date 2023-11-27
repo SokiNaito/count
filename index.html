@@ -7,19 +7,43 @@
     <script src="count.js"></script>
     <title>Count</title>
 </head>
+<body onload="load()">
     <div class="wrapper">
     <h1>文字数カウンター</h1>
     <div class="item">
-        <textarea id="input"></textarea>
+        <textarea id="input" ></textarea>
     </div>
-
+    
     <button id="nihyaku">200文字制限</button>
-
+    
     <button id="sanbyaku">300文字制限</button>
-
+    
     <button id="yonhyaku">400文字制限</button>
+    
+    <button  id="reset"   onclick="clearTextarea()" >クリア</button>
+   
+    <button id="kopi" onClick="copy()">コピー</button>
 
-    <div id="output" class="item"></div>
+    <div id="output" class="item" ></div>
+
+<br><br>
+    <br><br><br>
+    <h1>文章保存</h1>
+    <textarea name="mydata_in" id="mydata_in"></textarea>
+    <br>
+    <input type="button"  id="hozon" value="保存" onclick="save();" >
+<br ><br>
+
+<input type="button" value="保存確認" onclick="view();" >
+<br><br>
+<span id="mydata_out"></span>
+    
+
+<br><br>
+
+
+
+    
 
 </div>
 </body>
