@@ -9,13 +9,13 @@
 }
 
 .wrapper h1{
-    color: rgb(97, 160, 160);
+    color: rgb(0, 0, 0);
 }
 
 #input{
     resize: none;
-    width: 50%;
-    height: 100px;
+    width: 70%;
+    height: 150px;
     padding: 0.5em;
     border: 1px solid #999;
     box-sizing: border-box;
@@ -38,3 +38,30 @@
 .len2{
     color: crimson;
 }
+
+#reset{
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+   background-color: rgb(232, 134, 121);
+}
+
+#mydata_in{
+    resize: none;
+    width: 50%;
+    height: 60px;
+    padding: 0.5em;
+    border: 1px solid #999;
+    box-sizing: border-box;
+    background: #f2f2f2;
+    margin: 0.5em 0;
+}
+
+#kopi{
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+   background-color: rgb(213, 234, 178);
+}
+
+
