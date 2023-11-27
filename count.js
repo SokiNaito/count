@@ -3,7 +3,7 @@ window.addEventListener('DOMContentLoaded', function() {
         const val = document.querySelector('#input').value;
 
         // 変数の初期化
-        let len = val.length;   // 文字列の長さを得る
+        let len = val.replace(/[\n\s　]/g, "").length;   // 文字列の長さを得る
         const max = 300;
         let len2 = len - max;
         let res = '';
@@ -21,7 +21,7 @@ window.addEventListener('DOMContentLoaded', function() {
     document.querySelector('#yonhyaku').addEventListener('click', function(){
         const val = document.querySelector('#input').value;
 
-        let len = val.length;   // 文字列の長さを得る
+        let len = val.replace(/[\n\s　]/g, "").length;   // 文字列の長さを得る
         const max = 400;
         let len2 = len - max;
         let res = '';
@@ -39,7 +39,7 @@ window.addEventListener('DOMContentLoaded', function() {
     document.querySelector('#nihyaku').addEventListener('click', function(){
         const val = document.querySelector('#input').value;
 
-        let len = val.length;   // 文字列の長さを得る
+        let len = val.replace(/[\n\s　]/g, "").length;   // 文字列の長さを得る
         const max = 200;
         let len2 = len - max;
         let res = '';
