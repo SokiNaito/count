@@ -76,6 +76,7 @@ function load() {
 function save() {
     var mydata = document.getElementById("mydata_in").value;
     localStorage.setItem('mydata', mydata);
+    alert("保存しました。");
     }
     // 確認
     function view() {
