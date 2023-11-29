@@ -4,22 +4,26 @@
 .wrapper{
     outline: 2px solid #cacbcb;
     text-align: center;
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto;
+    background-color: #ffeded;
 }
 
 .wrapper h1{
-    color: rgb(0, 0, 0);
+    text-align: center;
+  margin-top: 20px;
+    color: #364e96;/*文字色*/
+  
 }
 
 #input{
     resize: none;
     width: 70%;
-    height: 150px;
+    height: 200px;
     padding: 0.5em;
     border: 1px solid #999;
     box-sizing: border-box;
-    background: #f2f2f2;
+    background: #ffffff;
     margin: 0.5em 0;
 }
 
@@ -48,13 +52,49 @@
 
 #mydata_in{
     resize: none;
-    width: 50%;
-    height: 60px;
+    width: 70%;
+    height: 180px;
     padding: 0.5em;
     border: 1px solid #999;
     box-sizing: border-box;
-    background: #f2f2f2;
+    background: #ffffff;
     margin: 0.5em 0;
+}
+
+#mydataSecond_in{
+    resize: none;
+    width: 70%;
+    height: 180px;
+    padding: 0.5em;
+    border: 1px solid #999;
+    box-sizing: border-box;
+    background: #ffffff;
+    margin: 0.5em 0;
+}
+
+
+#mydataThird_in{
+    resize: none;
+    width: 70%;
+    height: 180px;
+    padding: 0.5em;
+    border: 1px solid #999;
+    box-sizing: border-box;
+    background: #ffffff;
+    margin: 0.5em 0;
+}
+
+.wrapper h3{
+margin-top: 70px;
+margin-bottom: 5px;
+}
+
+
+#hozon{
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    background-color:rgb(208, 233, 255);
 }
 
 #kopi{
@@ -63,5 +103,16 @@
     height: 60px;
    background-color: rgb(213, 234, 178);
 }
+
+.hozon{
+    background-color: rgb(184, 184, 184);
+}
+
+#output{
+    margin-top: 40px;
+}
+
+
+
 
 
