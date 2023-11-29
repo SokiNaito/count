@@ -9,9 +9,10 @@
 </head>
 <body onload="load()">
     <div class="wrapper">
-    <h1>文字数カウンター</h1>
+    <h1>＜文字数カウンター＞</h1>
     <div class="item">
         <textarea id="input" ></textarea>
+        
     </div>
     
     <button id="nihyaku">200文字制限</button>
@@ -28,15 +29,36 @@
 
 <br><br>
     <br><br><br>
-    <h1>文章保存</h1>
+   
+    <h1>＜文章保存欄＞</h1>
+   <h3>200文字用</h3>
     <textarea name="mydata_in" id="mydata_in"></textarea>
     <br>
     <input type="button"  id="hozon" value="保存" onclick="save();" >
 <br ><br>
 
-<input type="button" value="保存確認" onclick="view();" >
-<br><br>
 <span id="mydata_out"></span>
+
+
+
+<h3>300文字用</h3>
+<textarea name="mydataSecond_in" id="mydataSecond_in"></textarea>
+    <br>
+    <input type="button"  id="hozon" value="保存" onclick="save();" >
+<br ><br>
+
+<span id="mydataSecond_out"></span>
+
+
+
+<h3>400文字用</h3>
+<textarea name="mydataThird_in" id="mydataThird_in"></textarea>
+    <br>
+    <input type="button"  id="hozon" value="保存" onclick="save();" >
+<br ><br>
+
+<span id="mydataThird_out"></span>
+
     
 
 <br><br>
