@@ -32,7 +32,7 @@ window.addEventListener('DOMContentLoaded', function() {
         let len0 = val.length; //スペースも1文字としてカウント
         let len = val.replace(/[\n\s　]/g, "").length;   // スペースを数えない
         let N = len0 - len ; //スペースの数
-        const max = 200;
+        const max = 300;
         let len2 = len - max;
         let res = '';
 
@@ -59,7 +59,7 @@ window.addEventListener('DOMContentLoaded', function() {
         let len0 = val.length; //スペースも1文字としてカウント
         let len = val.replace(/[\n\s　]/g, "").length;   // スペースを数えない
         let N = len0 - len ; //スペースの数
-        const max = 200;
+        const max = 400;
         let len2 = len - max;
         let res = '';
 
