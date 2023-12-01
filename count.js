@@ -108,10 +108,19 @@ window.addEventListener('DOMContentLoaded', function() {
 function clearTextarea() {
     let textareaForm = document.getElementById("input");
     const length = document.querySelector('.length');
+    const progressBar = document.getElementById('progressBar');
+    const progressBarThird = document.getElementById('progressBarThird');
+    const progressBarFourth = document.getElementById('updateProgressBarFourth');
     if(window.confirm('本当にクリアしますか？')){
         textareaForm.value = '';
         length.textContent = 0;
         res = '';
+        progressBar.value = 0;
+        progressBarThird.value = 0;
+        progressBarFourth.value = 0;
+        progressBar.style.backgroundColor = '';
+        progressBarThird.style.backgroundColor = '';
+        progressBarFourth.style.backgroundColor = '';
     } else{
         window.alert('クリアされませんでした'); 
     }
@@ -149,31 +158,31 @@ const copy = () => {
 
   function updateProgressBarThird() {
     const textArea = document.getElementById('input').value;
-    const progressBar = document.getElementById('progressBarThird');
+    const progressBarThird = document.getElementById('progressBarThird');
 
     const maxLength = 300;
     const percentage = (textArea.length / maxLength) * 300;
-    progressBar.value = percentage;
+    progressBarThird.value = percentage;
 
     if (textArea.length > maxLength) {
-        progressBar.style.backgroundColor= 'red';
+        progressBarThird.style.backgroundColor= 'red';
       } else {
-        progressBar.style.backgroundColor = '';  // Reset the color
+        progressBarThird.style.backgroundColor = '';  // Reset the color
       }
   }
 
   function updateProgressBarFourth() {
     const textArea = document.getElementById('input').value;
-    const progressBar = document.getElementById('updateProgressBarFourth');
+    const updateProgressBarFourth = document.getElementById('updateProgressBarFourth');
 
     const maxLength = 400;
     const percentage = (textArea.length / maxLength) * 400;
-    progressBar.value = percentage;
+    updateProgressBarFourth.value = percentage;
 
     if (textArea.length > maxLength) {
-        progressBar.style.backgroundColor = 'red';
+        updateProgressBarFourth.style.backgroundColor = 'red';
       } else {
-        progressBar.style.backgroundColor = '';  // Reset the color
+        updateProgressBarFourth.style.backgroundColor = '';  // Reset the color
       }
   }
 
@@ -213,3 +222,15 @@ function save() {
     localStorage.setItem('mydataThird', mydataThird);
    
     }
+
+
+
+    
+
+
+    
+        
+
+    
+
+
