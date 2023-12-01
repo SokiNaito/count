@@ -104,13 +104,78 @@ window.addEventListener('DOMContentLoaded', function() {
 });
 
 
-
+//クリアボタン
 function clearTextarea() {
-    var textareaForm = document.getElementById("input");
-  textareaForm.value = '';
-  
-}
+    let textareaForm = document.getElementById("input");
+    const length = document.querySelector('.length');
+    if(window.confirm('本当にクリアしますか？')){
+        textareaForm.value = '';
+        length.textContent = 0;
+        res = '';
+    } else{
+        window.alert('クリアされませんでした'); 
+    }
+    document.querySelector('#output').innerHTML = res;
+};
 
+
+//コピーボタン
+const copy = () => {
+    const txt = document.getElementById("input").value;
+    console.log(txt);
+  
+    
+    navigator.clipboard.writeText(txt);
+    alert("コピーしました！");
+  };
+
+
+
+  function updateProgressBar() {
+    const textArea = document.getElementById('input').value;
+    const progressBar = document.getElementById('progressBar');
+
+    const maxLength = 200;
+    const percentage = (textArea.length / maxLength) * 200;
+    progressBar.value = percentage;
+
+    if (textArea.length > maxLength) {
+        progressBar.style.backgroundColor = 'red';
+      } else {
+        progressBar.style.backgroundColor = '';  // Reset the color
+      }
+  }
+
+
+  function updateProgressBarThird() {
+    const textArea = document.getElementById('input').value;
+    const progressBar = document.getElementById('progressBarThird');
+
+    const maxLength = 300;
+    const percentage = (textArea.length / maxLength) * 300;
+    progressBar.value = percentage;
+
+    if (textArea.length > maxLength) {
+        progressBar.style.backgroundColor= 'red';
+      } else {
+        progressBar.style.backgroundColor = '';  // Reset the color
+      }
+  }
+
+  function updateProgressBarFourth() {
+    const textArea = document.getElementById('input').value;
+    const progressBar = document.getElementById('updateProgressBarFourth');
+
+    const maxLength = 400;
+    const percentage = (textArea.length / maxLength) * 400;
+    progressBar.value = percentage;
+
+    if (textArea.length > maxLength) {
+        progressBar.style.backgroundColor = 'red';
+      } else {
+        progressBar.style.backgroundColor = '';  // Reset the color
+      }
+  }
 
 
 //----------------------------文章保存-------------------------------//
@@ -148,26 +213,3 @@ function save() {
     localStorage.setItem('mydataThird', mydataThird);
    
     }
-
-
-
-    
-
-
-    
-        
-
-    
-
-
-
-    const copy = () => {
-        // テキストエリアの文字を取得
-        const txt = document.getElementById("input").value;
-        console.log(txt);
-      
-        // クリップボードにコピー
-        navigator.clipboard.writeText(txt);
-
-        alert("コピーしました！");
-      };
