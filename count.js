@@ -1,5 +1,17 @@
 window.addEventListener('DOMContentLoaded', function() {
 
+    const textArea = document.querySelector('#input');
+    const length = document.querySelector('.length');
+    textArea.addEventListener('input' , () => {
+      length.textContent = textArea.value.length;
+    }, false);
+    
+    
+    
+    
+    
+    
+    //200文字制限ボタン
     document.querySelector('#nihyaku').addEventListener('click', function(){
         const val = document.querySelector('#input').value;
 
@@ -10,12 +22,14 @@ window.addEventListener('DOMContentLoaded', function() {
         let len2 = len - max;
         let res = '';
 
-        // 文字数によって分岐
-        if (len0 <= max) {
-            res = `${len}/${max}文字でOKです！スペース込みだと${len0}/${max}文字です。`;
+        
+        if (len0 == 0 && len == 0) {
+            res = `文字が入力されていません`;
             
         } else if(len0 >= max && len <= max){
             res = `スペースを含めて${len0}文字です。スペースが${N}文字含まれています。`;
+        }else if(len0 <= max){
+            res = `${len}/${max}文字でOKです！スペース込みだと${len0}/${max}文字です。`;
         }
         else  {
             res = `${len}/${max}文字です！ ${len2}文字オーバーです。スペースを含めると${len0}/${max}文字です。`;
@@ -25,6 +39,8 @@ window.addEventListener('DOMContentLoaded', function() {
     });
 
 
+
+    //300文字制限ボタン
     document.querySelector('#sanbyaku').addEventListener('click', function() {
         const val = document.querySelector('#input').value;
         
@@ -38,11 +54,13 @@ window.addEventListener('DOMContentLoaded', function() {
 
 
         // 文字数によって分岐
-        if (len0 <= max) {
-            res = `${len}/${max}文字でOKです！スペース込みだと${len0}/${max}文字です。`;
+        if (len0 == 0 && len == 0) {
+            res = `文字が入力されていません`;
             
         } else if(len0 >= max && len <= max){
             res = `スペースを含めて${len0}文字です。スペースが${N}文字含まれています。`;
+        }else if(len0 <= max){
+            res = `${len}/${max}文字でOKです！スペース込みだと${len0}/${max}文字です。`;
         }
         else  {
             res = `${len}/${max}文字です！ ${len2}文字オーバーです。スペースを含めると${len0}/${max}文字です。`;
@@ -64,11 +82,13 @@ window.addEventListener('DOMContentLoaded', function() {
         let res = '';
 
         // 文字数によって分岐
-        if (len0 <= max) {
-            res = `${len}/${max}文字でOKです！スペース込みだと${len0}/${max}文字です。`;
+        if (len0 == 0 && len == 0) {
+            res = `文字が入力されていません`;
             
         } else if(len0 >= max && len <= max){
             res = `スペースを含めて${len0}文字です。スペースが${N}文字含まれています。`;
+        }else if(len0 <= max){
+            res = `${len}/${max}文字でOKです！スペース込みだと${len0}/${max}文字です。`;
         }
         else  {
             res = `${len}/${max}文字です！ ${len2}文字オーバーです。スペースを含めると${len0}/${max}文字です。`;
@@ -82,10 +102,16 @@ window.addEventListener('DOMContentLoaded', function() {
     
     
 });
+
+
+
 function clearTextarea() {
     var textareaForm = document.getElementById("input");
   textareaForm.value = '';
+  
 }
+
+
 
 //----------------------------文章保存-------------------------------//
 
@@ -104,16 +130,20 @@ function load() {
     }
     
     
+
     // 保存
 function save() {
     var mydata = document.getElementById("mydata_in").value;
     localStorage.setItem('mydata', mydata);
     alert("保存しました！");
     
+
+
     var mydataSecond = document.getElementById("mydataSecond_in").value;
     localStorage.setItem('mydataSecond', mydataSecond);
+    
 
-
+   
     var mydataThird = document.getElementById("mydataThird_in").value;
     localStorage.setItem('mydataThird', mydataThird);
    
