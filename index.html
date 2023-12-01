@@ -12,31 +12,35 @@
     <h1>＜文字数カウンター＞</h1>
     <div class="item">
         <textarea id="input" oninput="updateProgressBar() , updateProgressBarThird() , updateProgressBarFourth()"></textarea>
+        <br>
+        
         <div class="wordcount">
             <div>現在</div>
             <div class="length">0</div>
             <div>文字</div>
         </div>
         
+        <button  id="reset"   onclick="clearTextarea()" >クリア</button>
+        <button id="kopi" onClick="copy()">コピー</button>
         
     </div>
     
-    
+    <br>
     
     <button id="nihyaku">200文字制限</button>
     <progress id="progressBar" value="0" max="200"></progress>
-    <br>
+    <br><br>
    
     <button id="sanbyaku">300文字制限</button>
     <progress id="progressBarThird" value="0" max="300"></progress>
-    <br>
+    <br><br>
+
     <button id="yonhyaku">400文字制限</button>
     <progress id="updateProgressBarFourth" value="0" max="400"></progress>
     <br><br>
+
     <div id="output" class="item" ></div><br>
-    <button  id="reset"   onclick="clearTextarea()" >クリア</button>
    
-    <button id="kopi" onClick="copy()">コピー</button>
 
     <div id="output" class="item" ></div>
 
