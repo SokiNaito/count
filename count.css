@@ -44,10 +44,16 @@
 }
 
 #reset{
-    border-radius: 50%;
+    border-radius: 7%;
     width: 60px;
-    height: 60px;
-   background-color: rgb(232, 134, 121);
+    height: 40px;
+    background-color: rgb(232, 134, 121);
+}
+#kopi{
+    border-radius: 7%;
+    width: 60px;
+    height: 40px;
+   background-color: rgb(213, 234, 178);
 }
 
 #mydata_in{
@@ -97,12 +103,6 @@ margin-bottom: 5px;
     background-color:rgb(208, 233, 255);
 }
 
-#kopi{
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-   background-color: rgb(213, 234, 178);
-}
 
 .hozon{
     background-color: rgb(184, 184, 184);
@@ -112,10 +112,8 @@ margin-bottom: 5px;
     margin-top: 40px;
 }
 
+
 .wordcount div {
     display: inline-block;
     margin-right: 5px; 
   }
-
-
-
