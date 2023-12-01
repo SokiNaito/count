@@ -112,7 +112,10 @@ margin-bottom: 5px;
     margin-top: 40px;
 }
 
-
+.wordcount div {
+    display: inline-block;
+    margin-right: 5px; 
+  }
 
 
 
