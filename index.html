@@ -20,23 +20,30 @@
             <div>文字</div>
         </div>
         
-        <button  id="reset"   onclick="clearTextarea()" >クリア</button>
+        <button  id="reset"   onclick="func1()" >クリア</button>
         <button id="kopi" onClick="copy()">コピー</button>
         
     </div>
     
     <br>
+    <div class="box200">
+        <button id="nihyaku">200文字制限</button>
+        <progress id="progressBar" value="0" max="200"></progress> 
+        <p id="parsent"></p>
+    </div>
     
-    <button id="nihyaku">200文字制限</button>
-    <progress id="progressBar" value="0" max="200"></progress>
-    <br><br>
-   
+    <div class="box200">
     <button id="sanbyaku">300文字制限</button>
     <progress id="progressBarThird" value="0" max="300"></progress>
-    <br><br>
+    <p id="parsent300"></p>
+    </div>
+    
 
+    <div class="box200">
     <button id="yonhyaku">400文字制限</button>
     <progress id="updateProgressBarFourth" value="0" max="400"></progress>
+    <p id="parsent400"></p>
+</div>
     <br><br>
 
     <div id="output" class="item" ></div><br>
@@ -44,8 +51,8 @@
 
     <div id="output" class="item" ></div>
 
-<br><br>
-    <br><br><br>
+
+
    
     <h1>＜文章保存欄＞</h1>
    <h3>200文字用</h3>
