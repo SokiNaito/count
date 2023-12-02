@@ -2,6 +2,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
     const textArea = document.querySelector('#input');
     const length = document.querySelector('.length');
+    //テキストエリアに入力された文字数をリアルタイムでカウント
     textArea.addEventListener('input' , () => {
       length.textContent = textArea.value.length;
     }, false);
@@ -15,25 +16,22 @@ window.addEventListener('DOMContentLoaded', function() {
     document.querySelector('#nihyaku').addEventListener('click', function(){
         const val = document.querySelector('#input').value;
 
-        let len0 = val.length; //スペースも1文字としてカウント
-        let len = val.replace(/[\n\s　]/g, "").length;   // スペースを数えない
-        let N = len0 - len ; //スペースの数
+        let wordCount = val.length; //スペースも1文字としてカウント
+        let wordCountNoSpace = val.replace(/[\n\s　]/g, "").length;   // スペースをカウントしない
+        let space = wordCount - wordCountNoSpace ; //スペースの数
+        ; //スペースの数
         const max = 200;
-        let len2 = len - max;
+        let len = max - wordCountNoSpace;
         let res = '';
 
-        
-        if (len0 == 0 && len == 0) {
+        if (wordCount == 0 && wordCountNoSpace == 0) {
             res = `文字が入力されていません`;
-            
-        } else if(len0 >= max && len <= max){
-            res = `スペースを含めて${len0}文字です。スペースが${N}文字含まれています。`;
-        }else if(len0 <= max){
-            res = `${len}/${max}文字でOKです！スペース込みだと${len0}/${max}文字です。`;
-        }
-        else  {
-            res = `${len}/${max}文字です！ ${len2}文字オーバーです。スペースを含めると${len0}/${max}文字です。`;
-           
+        }else if(wordCount == max && space ==0){
+            res = `ピッタリ${max}文字です！`;
+        }else if(wordCount <= max && space !== 0){
+            res = `あと${len}文字入力できます。スペースが${space}文字含まれています。`;
+        }else if(wordCount <= max){
+         res =  `あと${len}文字入力できます。`;
         } 
         document.querySelector('#output').innerHTML = res;
     });
@@ -44,55 +42,49 @@ window.addEventListener('DOMContentLoaded', function() {
     document.querySelector('#sanbyaku').addEventListener('click', function() {
         const val = document.querySelector('#input').value;
         
-
-        let len0 = val.length; //スペースも1文字としてカウント
-        let len = val.replace(/[\n\s　]/g, "").length;   // スペースを数えない
-        let N = len0 - len ; //スペースの数
+        let wordCount = val.length; //スペースも1文字としてカウント
+        let wordCountNoSpace = val.replace(/[\n\s　]/g, "").length;   // スペースをカウントしない
+        let space = wordCount - wordCountNoSpace ; //スペースの数
+        ; //スペースの数
         const max = 300;
-        let len2 = len - max;
+        let len = max - wordCountNoSpace;
         let res = '';
 
-
-        // 文字数によって分岐
-        if (len0 == 0 && len == 0) {
+        if (wordCount == 0 && wordCountNoSpace == 0) {
             res = `文字が入力されていません`;
-            
-        } else if(len0 >= max && len <= max){
-            res = `スペースを含めて${len0}文字です。スペースが${N}文字含まれています。`;
-        }else if(len0 <= max){
-            res = `${len}/${max}文字でOKです！スペース込みだと${len0}/${max}文字です。`;
-        }
-        else  {
-            res = `${len}/${max}文字です！ ${len2}文字オーバーです。スペースを含めると${len0}/${max}文字です。`;
-           
+        }else if(wordCount == max && space ==0){
+            res = `ピッタリ${max}文字です！`;
+        }else if(wordCount <= max && space !== 0){
+            res = `あと${len}文字入力できます。スペースが${space}文字含まれています。`;
+        }else if(wordCount <= max){
+         res =  `あと${len}文字入力できます。`;
         } 
-        
-
         document.querySelector('#output').innerHTML = res;
     });
 
+
+
+
+    //400文字制限ボタン
     document.querySelector('#yonhyaku').addEventListener('click', function(){
         const val = document.querySelector('#input').value;
 
-        let len0 = val.length; //スペースも1文字としてカウント
-        let len = val.replace(/[\n\s　]/g, "").length;   // スペースを数えない
-        let N = len0 - len ; //スペースの数
+        let wordCount = val.length; //スペースも1文字としてカウント
+        let wordCountNoSpace = val.replace(/[\n\s　]/g, "").length;   // スペースをカウントしない
+        let space = wordCount - wordCountNoSpace ; //スペースの数
+        ; //スペースの数
         const max = 400;
-        let len2 = len - max;
+        let len = max - wordCountNoSpace;
         let res = '';
 
-        // 文字数によって分岐
-        if (len0 == 0 && len == 0) {
+        if (wordCount == 0 && wordCountNoSpace == 0) {
             res = `文字が入力されていません`;
-            
-        } else if(len0 >= max && len <= max){
-            res = `スペースを含めて${len0}文字です。スペースが${N}文字含まれています。`;
-        }else if(len0 <= max){
-            res = `${len}/${max}文字でOKです！スペース込みだと${len0}/${max}文字です。`;
-        }
-        else  {
-            res = `${len}/${max}文字です！ ${len2}文字オーバーです。スペースを含めると${len0}/${max}文字です。`;
-           
+        }else if(wordCount == max && space ==0){
+            res = `ピッタリ${max}文字です！`;
+        }else if(wordCount <= max && space !== 0){
+            res = `あと${len}文字入力できます。スペースが${space}文字含まれています。`;
+        }else if(wordCount <= max){
+         res =  `あと${len}文字入力できます。`;
         } 
         document.querySelector('#output').innerHTML = res;
     });
@@ -105,47 +97,31 @@ window.addEventListener('DOMContentLoaded', function() {
 
 
 //クリアボタン
-function clearTextarea() {
-    let textareaForm = document.getElementById("input");
-    const length = document.querySelector('.length');
-    const progressBar = document.getElementById('progressBar');
-    const progressBarThird = document.getElementById('progressBarThird');
-    const progressBarFourth = document.getElementById('updateProgressBarFourth');
-    if(window.confirm('本当にクリアしますか？')){
-        textareaForm.value = '';
-        length.textContent = 0;
-        res = '';
-        progressBar.value = 0;
-        progressBarThird.value = 0;
-        progressBarFourth.value = 0;
-        progressBar.style.backgroundColor = '';
-        progressBarThird.style.backgroundColor = '';
-        progressBarFourth.style.backgroundColor = '';
-    } else{
+function func1() {
+      if(window.confirm('本当にクリアしますか？')) {
+        document.location.reload();
+    }else{
         window.alert('クリアされませんでした'); 
     }
-    document.querySelector('#output').innerHTML = res;
-};
-
+}
 
 //コピーボタン
 const copy = () => {
     const txt = document.getElementById("input").value;
     console.log(txt);
-  
-    
     navigator.clipboard.writeText(txt);
     alert("コピーしました！");
   };
 
 
-
+//200文字バー
   function updateProgressBar() {
     const textArea = document.getElementById('input').value;
     const progressBar = document.getElementById('progressBar');
 
     const maxLength = 200;
     const percentage = (textArea.length / maxLength) * 200;
+    const percentage2 = Math.floor((textArea.length / maxLength) * 100);
     progressBar.value = percentage;
 
     if (textArea.length > maxLength) {
@@ -153,15 +129,20 @@ const copy = () => {
       } else {
         progressBar.style.backgroundColor = '';  // Reset the color
       }
-  }
+     
+      document.querySelector('#parsent').innerHTML = `${percentage2}%`;
+  };
 
 
+
+//300文字バー
   function updateProgressBarThird() {
     const textArea = document.getElementById('input').value;
     const progressBarThird = document.getElementById('progressBarThird');
-
+    
     const maxLength = 300;
     const percentage = (textArea.length / maxLength) * 300;
+    const percentage3 = Math.floor((textArea.length / maxLength) * 100);
     progressBarThird.value = percentage;
 
     if (textArea.length > maxLength) {
@@ -169,14 +150,18 @@ const copy = () => {
       } else {
         progressBarThird.style.backgroundColor = '';  // Reset the color
       }
-  }
+      document.querySelector('#parsent300').innerHTML = `${percentage3}%`;
+  };
 
+
+//400文字バー
   function updateProgressBarFourth() {
     const textArea = document.getElementById('input').value;
     const updateProgressBarFourth = document.getElementById('updateProgressBarFourth');
 
     const maxLength = 400;
     const percentage = (textArea.length / maxLength) * 400;
+    const percentage4 = Math.floor((textArea.length / maxLength) * 100);
     updateProgressBarFourth.value = percentage;
 
     if (textArea.length > maxLength) {
@@ -184,15 +169,15 @@ const copy = () => {
       } else {
         updateProgressBarFourth.style.backgroundColor = '';  // Reset the color
       }
-  }
+      document.querySelector('#parsent400').innerHTML = `${percentage4}%`;
+  };
+
+  
 
 
 //----------------------------文章保存-------------------------------//
 
 function load() {
-   /* if(!localStorage.getItem('mydata')) {
-    alert("保存データはありません");
-    } else {*/
     mydata = localStorage.getItem('mydata');
     document.getElementById("mydata_in").value = mydata;
 
@@ -201,36 +186,25 @@ function load() {
 
     mydataThird = localStorage.getItem('mydataThird');
     document.getElementById("mydataThird_in").value = mydataThird;
-    }
+    };
     
     
 
     // 保存
 function save() {
-    var mydata = document.getElementById("mydata_in").value;
+    let mydata = document.getElementById("mydata_in").value;
     localStorage.setItem('mydata', mydata);
     alert("保存しました！");
     
 
 
-    var mydataSecond = document.getElementById("mydataSecond_in").value;
+    let mydataSecond = document.getElementById("mydataSecond_in").value;
     localStorage.setItem('mydataSecond', mydataSecond);
     
 
    
-    var mydataThird = document.getElementById("mydataThird_in").value;
+    let mydataThird = document.getElementById("mydataThird_in").value;
     localStorage.setItem('mydataThird', mydataThird);
    
-    }
-
-
-
-    
-
-
-    
-        
-
-    
-
+    };
 
