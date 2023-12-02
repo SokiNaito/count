@@ -21,7 +21,7 @@ window.addEventListener('DOMContentLoaded', function() {
         let space = wordCount - wordCountNoSpace ; //スペースの数
         ; //スペースの数
         const max = 200;
-        let len = max - wordCountNoSpace;
+        let len = wordCount - max;
         let res = '';
 
         if (wordCount == 0 && wordCountNoSpace == 0) {
@@ -32,7 +32,9 @@ window.addEventListener('DOMContentLoaded', function() {
             res = `あと${len}文字入力できます。スペースが${space}文字含まれています。`;
         }else if(wordCount <= max){
          res =  `あと${len}文字入力できます。`;
-        } 
+        } else if(wordCount > max){
+            res = `${len}文字オーバーしています。`;
+        }
         document.querySelector('#output').innerHTML = res;
     });
 
@@ -47,7 +49,7 @@ window.addEventListener('DOMContentLoaded', function() {
         let space = wordCount - wordCountNoSpace ; //スペースの数
         ; //スペースの数
         const max = 300;
-        let len = max - wordCountNoSpace;
+        let len = wordCount - max;
         let res = '';
 
         if (wordCount == 0 && wordCountNoSpace == 0) {
@@ -58,7 +60,9 @@ window.addEventListener('DOMContentLoaded', function() {
             res = `あと${len}文字入力できます。スペースが${space}文字含まれています。`;
         }else if(wordCount <= max){
          res =  `あと${len}文字入力できます。`;
-        } 
+        } else if(wordCount > max){
+            res = `${len}文字オーバーしています。`;
+        }
         document.querySelector('#output').innerHTML = res;
     });
 
@@ -74,7 +78,7 @@ window.addEventListener('DOMContentLoaded', function() {
         let space = wordCount - wordCountNoSpace ; //スペースの数
         ; //スペースの数
         const max = 400;
-        let len = max - wordCountNoSpace;
+        let len = wordCount - max;
         let res = '';
 
         if (wordCount == 0 && wordCountNoSpace == 0) {
@@ -85,7 +89,9 @@ window.addEventListener('DOMContentLoaded', function() {
             res = `あと${len}文字入力できます。スペースが${space}文字含まれています。`;
         }else if(wordCount <= max){
          res =  `あと${len}文字入力できます。`;
-        } 
+        } else if(wordCount > max){
+            res = `${len}文字オーバーしています。`;
+        }
         document.querySelector('#output').innerHTML = res;
     });
 
