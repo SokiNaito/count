@@ -6,7 +6,7 @@
     text-align: center;
     max-width: 800px;
     margin: 0 auto;
-    background-color: #ffeded;
+    background-color: #fff4f4;
 }
 
 .wrapper h1{
@@ -25,6 +25,22 @@
     box-sizing: border-box;
     background: #ffffff;
     margin: 0.5em 0;
+}
+
+.box200{
+    display: flex;
+    margin-left: 280px;
+    margin-bottom: 30px;
+}
+
+#progressBar{
+    margin-top: 18px;
+}
+#progressBarThird{
+    margin-top: 18px;
+}
+#updateProgressBarFourth{
+    margin-top: 18px;
 }
 
 #nihyaku{
@@ -117,3 +133,5 @@ margin-bottom: 5px;
     display: inline-block;
     margin-right: 5px; 
   }
+
+  
