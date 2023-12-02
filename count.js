@@ -21,7 +21,7 @@ window.addEventListener('DOMContentLoaded', function() {
         let space = wordCount - wordCountNoSpace ; //スペースの数
         ; //スペースの数
         const max = 200;
-        let len = wordCount - max;
+        let len = max - wordCount ;
         let res = '';
 
         if (wordCount == 0 && wordCountNoSpace == 0) {
@@ -49,7 +49,7 @@ window.addEventListener('DOMContentLoaded', function() {
         let space = wordCount - wordCountNoSpace ; //スペースの数
         ; //スペースの数
         const max = 300;
-        let len = wordCount - max;
+        let len = max - wordCount;
         let res = '';
 
         if (wordCount == 0 && wordCountNoSpace == 0) {
@@ -78,7 +78,7 @@ window.addEventListener('DOMContentLoaded', function() {
         let space = wordCount - wordCountNoSpace ; //スペースの数
         ; //スペースの数
         const max = 400;
-        let len = wordCount - max;
+        let len = max - wordCount;
         let res = '';
 
         if (wordCount == 0 && wordCountNoSpace == 0) {
