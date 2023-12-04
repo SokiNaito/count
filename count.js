@@ -21,7 +21,8 @@ window.addEventListener('DOMContentLoaded', function() {
         let space = wordCount - wordCountNoSpace ; //スペースの数
         ; //スペースの数
         const max = 200;
-        let len = max - wordCount ;
+        let len = wordCount - max;
+        let len2 = max - wordCount;
         let res = '';
 
         if (wordCount == 0 && wordCountNoSpace == 0) {
@@ -31,7 +32,7 @@ window.addEventListener('DOMContentLoaded', function() {
         }else if(wordCount <= max && space !== 0){
             res = `あと${len}文字入力できます。スペースが${space}文字含まれています。`;
         }else if(wordCount <= max){
-         res =  `あと${len}文字入力できます。`;
+         res =  `あと${len2}文字入力できます。`;
         } else if(wordCount > max){
             res = `${len}文字オーバーしています。`;
         }
@@ -49,7 +50,8 @@ window.addEventListener('DOMContentLoaded', function() {
         let space = wordCount - wordCountNoSpace ; //スペースの数
         ; //スペースの数
         const max = 300;
-        let len = max - wordCount;
+        let len = wordCount - max;
+        let len2 = max - wordCount;
         let res = '';
 
         if (wordCount == 0 && wordCountNoSpace == 0) {
@@ -59,7 +61,7 @@ window.addEventListener('DOMContentLoaded', function() {
         }else if(wordCount <= max && space !== 0){
             res = `あと${len}文字入力できます。スペースが${space}文字含まれています。`;
         }else if(wordCount <= max){
-         res =  `あと${len}文字入力できます。`;
+         res =  `あと${len2}文字入力できます。`;
         } else if(wordCount > max){
             res = `${len}文字オーバーしています。`;
         }
@@ -78,7 +80,8 @@ window.addEventListener('DOMContentLoaded', function() {
         let space = wordCount - wordCountNoSpace ; //スペースの数
         ; //スペースの数
         const max = 400;
-        let len = max - wordCount;
+        let len = wordCount - max;
+        let len2 = max - wordCount;
         let res = '';
 
         if (wordCount == 0 && wordCountNoSpace == 0) {
@@ -88,7 +91,7 @@ window.addEventListener('DOMContentLoaded', function() {
         }else if(wordCount <= max && space !== 0){
             res = `あと${len}文字入力できます。スペースが${space}文字含まれています。`;
         }else if(wordCount <= max){
-         res =  `あと${len}文字入力できます。`;
+         res =  `あと${len2}文字入力できます。`;
         } else if(wordCount > max){
             res = `${len}文字オーバーしています。`;
         }
