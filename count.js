@@ -30,7 +30,7 @@ window.addEventListener('DOMContentLoaded', function() {
         }else if(wordCount == max && space ==0){
             res = `ピッタリ${max}文字です！`;
         }else if(wordCount <= max && space !== 0){
-            res = `あと${len}文字入力できます。スペースが${space}文字含まれています。`;
+            res = `スペースが${space}文字含まれています。`;
         }else if(wordCount <= max){
          res =  `あと${len2}文字入力できます。`;
         } else if(wordCount > max){
@@ -59,7 +59,7 @@ window.addEventListener('DOMContentLoaded', function() {
         }else if(wordCount == max && space ==0){
             res = `ピッタリ${max}文字です！`;
         }else if(wordCount <= max && space !== 0){
-            res = `あと${len}文字入力できます。スペースが${space}文字含まれています。`;
+            res = `スペースが${space}文字含まれています。`;
         }else if(wordCount <= max){
          res =  `あと${len2}文字入力できます。`;
         } else if(wordCount > max){
@@ -89,7 +89,7 @@ window.addEventListener('DOMContentLoaded', function() {
         }else if(wordCount == max && space ==0){
             res = `ピッタリ${max}文字です！`;
         }else if(wordCount <= max && space !== 0){
-            res = `あと${len}文字入力できます。スペースが${space}文字含まれています。`;
+            res = `スペースが${space}文字含まれています。`;
         }else if(wordCount <= max){
          res =  `あと${len2}文字入力できます。`;
         } else if(wordCount > max){
