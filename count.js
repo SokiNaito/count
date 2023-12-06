@@ -28,13 +28,13 @@ window.addEventListener('DOMContentLoaded', function() {
         if (wordCount == 0 && wordCountNoSpace == 0) {
             res = `文字が入力されていません`;
         }else if(wordCount == max && space ==0){
-            res = `ピッタリ${max}文字です！`;
+            res = `ピッタリ<span style="color:red";>${max}</span>文字です！`;
         }else if(wordCount <= max && space !== 0){
-            res = `あと${len}文字入力できます。スペースが${space}文字含まれています。`;
+            res = `あと<span style="color:red";>${len2}</span>文字入力できます。スペースが<span style="color:red";>${space}</span>文字含まれています。`;
         }else if(wordCount <= max){
-         res =  `あと${len2}文字入力できます。`;
+         res =  `あと<span style="color:red";>${len2}</span>文字入力できます。`;
         } else if(wordCount > max){
-            res = `${len}文字オーバーしています。`;
+            res = `<span style="color:red";>${len}</span>文字オーバーしています。`;
         }
         document.querySelector('#output').innerHTML = res;
     });
@@ -55,16 +55,16 @@ window.addEventListener('DOMContentLoaded', function() {
         let res = '';
 
         if (wordCount == 0 && wordCountNoSpace == 0) {
-            res = `文字が入力されていません`;
-        }else if(wordCount == max && space ==0){
-            res = `ピッタリ${max}文字です！`;
-        }else if(wordCount <= max && space !== 0){
-            res = `あと${len2}文字入力できます。スペースが${space}文字含まれています。`;
-        }else if(wordCount <= max){
-         res =  `あと${len2}文字入力できます。`;
-        } else if(wordCount > max){
-            res = `${len}文字オーバーしています。`;
-        }
+          res = `文字が入力されていません`;
+      }else if(wordCount == max && space ==0){
+          res = `ピッタリ<span style="color:red";>${max}</span>文字です！`;
+      }else if(wordCount <= max && space !== 0){
+          res = `あと<span style="color:red";>${len2}</span>文字入力できます。スペースが<span style="color:red";>${space}</span>文字含まれています。`;
+      }else if(wordCount <= max){
+       res =  `あと<span style="color:red";>${len2}</span>文字入力できます。`;
+      } else if(wordCount > max){
+          res = `<span style="color:red";>${len}</span>文字オーバーしています。`;
+      }
         document.querySelector('#output').innerHTML = res;
     });
 
@@ -85,16 +85,16 @@ window.addEventListener('DOMContentLoaded', function() {
         let res = '';
 
         if (wordCount == 0 && wordCountNoSpace == 0) {
-            res = `文字が入力されていません`;
-        }else if(wordCount == max && space ==0){
-            res = `ピッタリ${max}文字です！`;
-        }else if(wordCount <= max && space !== 0){
-            res = `あと${len2}文字入力できます。スペースが${space}文字含まれています。`;
-        }else if(wordCount <= max){
-         res =  `あと${len2}文字入力できます。`;
-        } else if(wordCount > max){
-            res = `${len}文字オーバーしています。`;
-        }
+          res = `文字が入力されていません`;
+      }else if(wordCount == max && space ==0){
+          res = `ピッタリ<span style="color:red";>${max}</span>文字です！`;
+      }else if(wordCount <= max && space !== 0){
+          res = `あと<span style="color:red";>${len2}</span>文字入力できます。スペースが<span style="color:red";>${space}</span>文字含まれています。`;
+      }else if(wordCount <= max){
+       res =  `あと<span style="color:red";>${len2}</span>文字入力できます。`;
+      } else if(wordCount > max){
+          res = `<span style="color:red";>${len}</span>文字オーバーしています。`;
+      }
         document.querySelector('#output').innerHTML = res;
     });
 
@@ -187,14 +187,7 @@ const copy = () => {
   
 
 
-let title = document.getElementsByClassName("title")[0];
-let article = document.getElementsByClassName("article")[0];
 
-title.addEventListener("click", ()=>{
-  article.classList.toggle("hidden");
-  article.classList.toggle("show");
-  title.classList.toggle("title-after");
-});
 
 
 
@@ -236,4 +229,3 @@ function save() {
     localStorage.setItem('mydataThird', mydataThird);
    
     };
-
