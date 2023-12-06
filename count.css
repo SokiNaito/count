@@ -10,11 +10,9 @@
 }
 
 .wrapper h1{
-    text-align: center;
-  margin-top: 20px;
-    color: #364e96;/*文字色*/
-  
+    color: #002bb7;
 }
+
 
 #input{
     resize: none;
@@ -44,16 +42,67 @@
 }
 
 #nihyaku{
-    background-color: rgb(196, 242, 242);
+    height:50px;
+	line-height:30px;
+	width:100px;
+	text-align:center;
+	cursor:pointer;
+	border-top:2px solid rgba(255,255,255,0.2);
+	border-bottom:2px solid rgba(0,0,0,0.2);
+	border-radius:4px;
+    background-color: #a7bbfa;
 }
+#nihyaku:hover{
+    opacity:0.8;
+}
+#nihyaku:active {
+	-webkit-transform: translate(0,2px);
+	-moz-transform: translate(0,2px);
+	transform: translate(0,2px);
+	border-bottom:none;
+	}
 
 #sanbyaku{
-    background-color: rgb(127, 210, 255);
+    height:50px;
+	line-height:30px;
+	width:100px;
+	text-align:center;
+	cursor:pointer;
+	border-top:2px solid rgba(0,0,0,0.2);
+	border-bottom:2px solid rgba(0,0,0,0.2);
+	border-radius:4px;
+    background-color: #a7faf0;
 }
+#sanbyaku:hover{
+    opacity:0.8;
+}
+#sanbyaku:active {
+	-webkit-transform: translate(0,2px);
+	-moz-transform: translate(0,2px);
+	transform: translate(0,2px);
+	border-bottom:none;
+	}
 
 #yonhyaku{
-    background-color: rgb(232, 184, 113);
+    height:50px;
+	line-height:30px;
+	width:100px;
+	text-align:center;
+	cursor:pointer;
+	border-top:2px solid rgba(255,255,255,0.2);
+	border-bottom:2px solid rgba(0,0,0,0.2);
+	border-radius:4px;
+    background-color: #fae8a7;
 }
+#yonhyaku:hover{
+    opacity:0.8;
+}
+#yonhyaku:active {
+	-webkit-transform: translate(0,2px);
+	-moz-transform: translate(0,2px);
+	transform: translate(0,2px);
+	border-bottom:none;
+	}
 
 .len2{
     color: crimson;
@@ -134,4 +183,61 @@ margin-bottom: 5px;
     margin-right: 5px; 
   }
 
+
+  .title{
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .title-after{
+      color: #CCC;
+  }
+  
+  .hidden {
+    display: none;
+  }
+
+  .text{
+    color: #002bb7;
+    font-size:larger;
+  }
+  
+  .show {
+      display: block;
+    animation-name: showAnime; 
+    animation-duration: 2s; 
+    animation-fill-mode: forwards;
+    perspective: 10; /*スマホのちらつき防止*/
+    -webkit-perspective: 10;
+  }
+  
+  @keyframes showAnime {
+  0% {
+    opacity: 0;
+    color:#000;
+  }
+  90% {
+   opacity: 1;
+   color:#000;
+  }
+  }
+  
+  .text {
+    display: inline-block;
+    font-size: 2rem;
+    font-family: "Ryumin ExtraBold KL";
+    letter-spacing: -0.15rem;
+    animation: text-animation 0.8s forwards;
+    transform: rotateY(90deg);
+}
+
+@keyframes text-animation {
+    0% {
+        transform: rotateY(90deg);
+    }
+
+    100% {
+        transform: rotateY(0deg);
+    }
+}
   
