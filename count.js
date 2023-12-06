@@ -7,7 +7,7 @@ window.addEventListener('DOMContentLoaded', function() {
       length.textContent = textArea.value.length;
     }, false);
     
-    
+
     
     
     
@@ -30,7 +30,7 @@ window.addEventListener('DOMContentLoaded', function() {
         }else if(wordCount == max && space ==0){
             res = `ピッタリ${max}文字です！`;
         }else if(wordCount <= max && space !== 0){
-            res = `スペースが${space}文字含まれています。`;
+            res = `あと${len}文字入力できます。スペースが${space}文字含まれています。`;
         }else if(wordCount <= max){
          res =  `あと${len2}文字入力できます。`;
         } else if(wordCount > max){
@@ -59,7 +59,7 @@ window.addEventListener('DOMContentLoaded', function() {
         }else if(wordCount == max && space ==0){
             res = `ピッタリ${max}文字です！`;
         }else if(wordCount <= max && space !== 0){
-            res = `スペースが${space}文字含まれています。`;
+            res = `あと${len2}文字入力できます。スペースが${space}文字含まれています。`;
         }else if(wordCount <= max){
          res =  `あと${len2}文字入力できます。`;
         } else if(wordCount > max){
@@ -89,7 +89,7 @@ window.addEventListener('DOMContentLoaded', function() {
         }else if(wordCount == max && space ==0){
             res = `ピッタリ${max}文字です！`;
         }else if(wordCount <= max && space !== 0){
-            res = `スペースが${space}文字含まれています。`;
+            res = `あと${len2}文字入力できます。スペースが${space}文字含まれています。`;
         }else if(wordCount <= max){
          res =  `あと${len2}文字入力できます。`;
         } else if(wordCount > max){
@@ -181,10 +181,30 @@ const copy = () => {
       document.querySelector('#parsent400').innerHTML = `${percentage4}%`;
   };
 
+
+  
+
+  
+
+
+let title = document.getElementsByClassName("title")[0];
+let article = document.getElementsByClassName("article")[0];
+
+title.addEventListener("click", ()=>{
+  article.classList.toggle("hidden");
+  article.classList.toggle("show");
+  title.classList.toggle("title-after");
+});
+
+
+
+
   
 
 
 //----------------------------文章保存-------------------------------//
+
+
 
 function load() {
     mydata = localStorage.getItem('mydata');
