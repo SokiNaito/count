@@ -1,17 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="count.css">
-    <script src="count.js"></script>
-    <title>Count</title>
-</head>
-<body onload="load()">
-    <div class="wrapper">
-    <h1>＜文字数カウンター＞</h1>
-    <div class="item">
-        <textarea id="input" oninput="updateProgressBar() , updateProgressBarThird() , updateProgressBarFourth()"></textarea>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="count.css">
+        
+        
+        
+        <title>Count</title>
+    </head>
+    <body onload="load()">
+        <div class="wrapper">
+            <h1>
+                <span class='text' style="animation-delay: 0s">＜</span>
+                <span class='text' style="animation-delay: 0.2s">文</span>
+                <span class='text' style="animation-delay: 0.4s">字</span>
+                <span class='text' style="animation-delay: 0.6s">数</span>
+                <span class='text' style="animation-delay: 0.8s">カ</span>
+                <span class='text' style="animation-delay: 1s">ウ</span>
+                <span class='text' style="animation-delay: 1.2s">ン</span>
+                <span class='text' style="animation-delay: 1.4s">タ</span>
+                <span class='text' style="animation-delay: 1.6s">ー</span>
+                <span class='text' style="animation-delay: 1.8s">＞</span>
+                
+            </h1>
+    
+            <div class="item">
+        <textarea id="input" oninput="updateProgressBar() , updateProgressBarThird() , updateProgressBarFourth() , updateChart()"></textarea>
         <br>
         
         <div class="wordcount">
@@ -44,24 +59,28 @@
     <progress id="updateProgressBarFourth" value="0" max="400"></progress>
     <p id="parsent400"></p>
 </div>
+
+
+    <div id="output" class="item" ></div>
+    
+    <div id="output" class="item" ></div>
+
+
+    
     <br>
-
-    <div id="output" class="item" ></div><br>
-   
-
-   
+    
 
 
-
-   
     <h1>＜文章保存欄＞</h1>
-   <h3>200文字用</h3>
+    
+
+    <h3>200文字用</h3>
     <textarea name="mydata_in" id="mydata_in"></textarea>
     <br>
     <input type="button"  id="hozon" value="保存" onclick="save();" >
     
-<br ><br>
-
+    <br ><br>
+    
 <span id="mydata_out"></span>
 
 
@@ -78,8 +97,8 @@
 
 <h3>400文字用</h3>
 <textarea name="mydataThird_in" id="mydataThird_in"></textarea>
-    <br>
-    <input type="button"  id="hozon" value="保存" onclick="save();" >
+<br>
+<input type="button"  id="hozon" value="保存" onclick="save();" >
 <br ><br>
 
 <span id="mydataThird_out"></span>
@@ -90,8 +109,16 @@
 
 
 
-    
+
 
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
 </body>
+
+
+<script src="count.js" ></script>
+
 </html>
