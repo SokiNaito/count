@@ -97,11 +97,6 @@ window.addEventListener('DOMContentLoaded', function() {
       }
         document.querySelector('#output').innerHTML = res;
     });
-
-
-
-    
-    
 });
 
 
@@ -182,50 +177,98 @@ const copy = () => {
   };
 
 
-  
-
-  
-
-
-
-
-
-
-
-  
-
 
 //----------------------------文章保存-------------------------------//
-
-
-
-function load() {
-    mydata = localStorage.getItem('mydata');
-    document.getElementById("mydata_in").value = mydata;
-
-    mydataSecond = localStorage.getItem('mydataSecond');
-    document.getElementById("mydataSecond_in").value = mydataSecond;
-
-    mydataThird = localStorage.getItem('mydataThird');
-    document.getElementById("mydataThird_in").value = mydataThird;
+    window.onload = function() {
+      loadSavedText();
     };
     
+    // テキストエリアを追加する関数
+    function addTextArea() {
+      let textareaContainer = document.getElementById('textareaContainer');
+      let wrapper = document.createElement('div');
+      wrapper.className = 'textarea-wrapper';
     
+      
+      let textarea = document.createElement('textarea');
+      //textarea.setAttribute('placeholder', 'ここにテキストを入力してください');
+      
+      
+      
 
-    // 保存
-function save() {
-    let mydata = document.getElementById("mydata_in").value;
-    localStorage.setItem('mydata', mydata);
-    alert("保存しました！");
+      let deleteButton = document.createElement('button');
+      deleteButton.textContent = '✖削除';
+      deleteButton.className = 'delete-button';
+      deleteButton.onclick = function() {
+        wrapper.remove();
+      };
+
+
+
+      
+      wrapper.appendChild(textarea);
+      wrapper.appendChild(deleteButton);
+      textareaContainer.appendChild(wrapper);
+    }
     
+    // テキストを保存する関数
+    function saveText() {
 
+      let textareaWrappers = document.querySelectorAll('.textarea-wrapper');
+      let texts = [];
 
-    let mydataSecond = document.getElementById("mydataSecond_in").value;
-    localStorage.setItem('mydataSecond', mydataSecond);
+      
     
+      textareaWrappers.forEach(function(wrapper) {
+        let textarea = wrapper.querySelector('textarea');
+        texts.push(textarea.value);
+      });
 
-   
-    let mydataThird = document.getElementById("mydataThird_in").value;
-    localStorage.setItem('mydataThird', mydataThird);
-   
-    };
+      
+    
+      // ローカルストレージに保存
+      localStorage.setItem('savedTexts', JSON.stringify(texts));
+      alert('テキストが保存されました！');
+
+      
+    }
+    
+    // 保存されたテキストを読み込む関数
+    function loadSavedText() {
+      
+
+      //let textareaContainer = document.getElementById('textareaContainer');
+      let savedTexts = localStorage.getItem('savedTexts');
+    
+      if (savedTexts) {
+        savedTexts = JSON.parse(savedTexts);
+    
+        savedTexts.forEach(function(text) {
+          addTextAreaWithText(text);
+        });
+      }
+ }
+
+    
+    // テキストを指定してテキストエリアを追加する関数
+    function addTextAreaWithText(text) {
+      let textareaContainer = document.getElementById('textareaContainer');
+      let wrapper = document.createElement('div');
+      wrapper.className = 'textarea-wrapper';
+    
+      let textarea = document.createElement('textarea');
+      textarea.value = text;
+    
+      let deleteButton = document.createElement('button');
+      deleteButton.textContent = '削除';
+      deleteButton.className = 'delete-button';
+      deleteButton.onclick = function() {
+        wrapper.remove();
+        alert('ホントに削除しますか？');
+
+      };
+    
+      wrapper.appendChild(textarea);
+      wrapper.appendChild(deleteButton);
+      textareaContainer.appendChild(wrapper);
+    }
