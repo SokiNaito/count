@@ -66,54 +66,25 @@
     <div id="output" class="item" ></div>
 
 
-    
-    <br>
-    
-
-
     <h1>＜文章保存欄＞</h1>
-    
-
-    <h3>200文字用</h3>
-    <textarea name="mydata_in" id="mydata_in"></textarea>
-    <br>
-    <input type="button"  id="hozon" value="保存" onclick="save();" >
-    
-    <br ><br>
-    
-<span id="mydata_out"></span>
 
 
 
-<h3>300文字用</h3>
-<textarea name="mydataSecond_in" id="mydataSecond_in"></textarea>
-    <br>
-    <input type="button"  id="hozon" value="保存" onclick="save();" >
-<br ><br>
-
-<span id="mydataSecond_out"></span>
-
-
-
-<h3>400文字用</h3>
-<textarea name="mydataThird_in" id="mydataThird_in"></textarea>
-<br>
-<input type="button"  id="hozon" value="保存" onclick="save();" >
-<br ><br>
-
-<span id="mydataThird_out"></span>
-
-    
+<div>
+    <button id="add" onclick=" addTextArea()" >＋テキストエリア追加</button>
+  </div>
+  <br>
+  <div id="inputareaContainer">
+    <!-- 既存のテキストエリアがここに表示されます -->
+  </div>
+  
+  <div id="textareaContainer">
+    <!-- 既存のテキストエリアがここに表示されます -->
+  </div>
+  
+  <button id="hozo" onclick=" saveText()" >保存</button>
 
 <br><br>
-
-
-
-
-
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 
 </body>
