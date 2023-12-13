@@ -251,22 +251,26 @@ const copy = () => {
 
     
     // テキストを指定してテキストエリアを追加する関数
-    function addTextAreaWithText(text) {
-      let textareaContainer = document.getElementById('textareaContainer');
-      let wrapper = document.createElement('div');
-      wrapper.className = 'textarea-wrapper';
-    
-      let textarea = document.createElement('textarea');
-      textarea.value = text;
-    
-      let deleteButton = document.createElement('button');
-      deleteButton.textContent = '削除';
-      deleteButton.className = 'delete-button';
-      deleteButton.onclick = function() {
+      function addTextAreaWithText(text) {
+    let textareaContainer = document.getElementById('textareaContainer');
+    let wrapper = document.createElement('div');
+    wrapper.className = 'textarea-wrapper';
+  
+    let textarea = document.createElement('textarea');
+    textarea.value = text;
+  
+    let deleteButton = document.createElement('button');
+    deleteButton.textContent = '削除';
+    deleteButton.className = 'delete-button';
+    deleteButton.onclick = function() {
+      
+      if(window.confirm('本当に削除しますか？')) {
         wrapper.remove();
-        alert('ホントに削除しますか？');
+    }else{
+        window.alert('削除されませんでした'); 
+    }
 
-      };
+    };
     
       wrapper.appendChild(textarea);
       wrapper.appendChild(deleteButton);
