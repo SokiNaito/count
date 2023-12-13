@@ -26,16 +26,16 @@ window.addEventListener('DOMContentLoaded', function() {
         let res = '';
 
         if (wordCount == 0 && wordCountNoSpace == 0) {
-            res = `文字が入力されていません`;
-        }else if(wordCount == max && space ==0){
-            res = `ピッタリ<span style="color:red";>${max}</span>文字です！`;
-        }else if(wordCount <= max && space !== 0){
-            res = `あと<span style="color:red";>${len2}</span>文字入力できます。スペースが<span style="color:red";>${space}</span>文字含まれています。`;
-        }else if(wordCount <= max){
-         res =  `あと<span style="color:red";>${len2}</span>文字入力できます。`;
-        } else if(wordCount > max){
-            res = `<span style="color:red";>${len}</span>文字オーバーしています。`;
-        }
+        res = `文字が入力されていません`;
+    }else if(wordCount == max && space ==0){
+        res = `ピッタリ<span style="color:red";><b>${max}</b></span>文字です！`;
+    }else if(wordCount <= max && space !== 0){
+        res = `あと<span style="color:red";><b>${len2}</b></span>文字入力できます。スペースが<span style="color:red";><b>${space}</b></span>文字含まれています。`;
+    }else if(wordCount <= max){
+     res =  `あと<span style="color:red";><b>${len2}</b></span>文字入力できます。`;
+    } else if(wordCount > max){
+        res = `<span style="color:red";><b>${len}</b></span>文字オーバーしています。`;
+    }
         document.querySelector('#output').innerHTML = res;
     });
 
@@ -55,16 +55,16 @@ window.addEventListener('DOMContentLoaded', function() {
         let res = '';
 
         if (wordCount == 0 && wordCountNoSpace == 0) {
-          res = `文字が入力されていません`;
-      }else if(wordCount == max && space ==0){
-          res = `ピッタリ<span style="color:red";>${max}</span>文字です！`;
-      }else if(wordCount <= max && space !== 0){
-          res = `あと<span style="color:red";>${len2}</span>文字入力できます。スペースが<span style="color:red";>${space}</span>文字含まれています。`;
-      }else if(wordCount <= max){
-       res =  `あと<span style="color:red";>${len2}</span>文字入力できます。`;
-      } else if(wordCount > max){
-          res = `<span style="color:red";>${len}</span>文字オーバーしています。`;
-      }
+        res = `文字が入力されていません`;
+    }else if(wordCount == max && space ==0){
+        res = `ピッタリ<span style="color:red";><b>${max}</b></span>文字です！`;
+    }else if(wordCount <= max && space !== 0){
+        res = `あと<span style="color:red";><b>${len2}</b></span>文字入力できます。スペースが<span style="color:red";><b>${space}</b></span>文字含まれています。`;
+    }else if(wordCount <= max){
+     res =  `あと<span style="color:red";><b>${len2}</b></span>文字入力できます。`;
+    } else if(wordCount > max){
+        res = `<span style="color:red";><b>${len}</b></span>文字オーバーしています。`;
+    }
         document.querySelector('#output').innerHTML = res;
     });
 
@@ -84,17 +84,17 @@ window.addEventListener('DOMContentLoaded', function() {
         let len2 = max - wordCount;
         let res = '';
 
-        if (wordCount == 0 && wordCountNoSpace == 0) {
-          res = `文字が入力されていません`;
-      }else if(wordCount == max && space ==0){
-          res = `ピッタリ<span style="color:red";>${max}</span>文字です！`;
-      }else if(wordCount <= max && space !== 0){
-          res = `あと<span style="color:red";>${len2}</span>文字入力できます。スペースが<span style="color:red";>${space}</span>文字含まれています。`;
-      }else if(wordCount <= max){
-       res =  `あと<span style="color:red";>${len2}</span>文字入力できます。`;
-      } else if(wordCount > max){
-          res = `<span style="color:red";>${len}</span>文字オーバーしています。`;
-      }
+       if (wordCount == 0 && wordCountNoSpace == 0) {
+        res = `文字が入力されていません`;
+    }else if(wordCount == max && space ==0){
+        res = `ピッタリ<span style="color:red";><b>${max}</b></span>文字です！`;
+    }else if(wordCount <= max && space !== 0){
+        res = `あと<span style="color:red";><b>${len2}</b></span>文字入力できます。スペースが<span style="color:red";><b>${space}</b></span>文字含まれています。`;
+    }else if(wordCount <= max){
+     res =  `あと<span style="color:red";><b>${len2}</b></span>文字入力できます。`;
+    } else if(wordCount > max){
+        res = `<span style="color:red";><b>${len}</b></span>文字オーバーしています。`;
+    }
         document.querySelector('#output').innerHTML = res;
     });
 });
