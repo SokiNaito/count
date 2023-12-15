@@ -6,12 +6,98 @@
     text-align: center;
     max-width: 800px;
     margin: 0 auto;
-    background: linear-gradient(to bottom right, #fff2f7d7, #ffe5d8);
+    background:  #edededd7;
 }
 
 .wrapper h1{
-    color: #002bb7;
+    font-size: 40px;
+    color: #50535f;
+    text-shadow: #fff 2px 0, #fff -2px 0, #fff 0 -2px, #fff 0 2px, #fff 2px 2px, #fff -2px 2px, #fff 2px -2px, #fff -2px -2px, #fff 1px 2px, #fff -1px 2px, #fff 1px -2px, #fff -1px -2px, #fff 2px 1px, #fff -2px 1px, #fff 2px -1px, #fff -2px -1px, rgba(0, 0, 0, .5) 3px 3px 3px;
 }
+
+
+.display_none {
+	margin: 10px; 
+    background-color:  linear-gradient(to bottom right, #fff2f7d7, #ffe5d8);
+    text-align: center;
+    padding-bottom: 30px;
+	}
+.dis_none_bt {
+	font-size: 16px;
+    width: 160px;
+    box-shadow: 0px 0px 18px -5px #777777;
+    cursor: pointer;
+    transition: all 0.3s;
+	}
+.dis_none_bt:hover{
+        opacity:0.8;
+        transform: translateY(5px);
+        box-shadow: none;
+    }
+    
+
+.output0{
+   text-align: center;
+}
+
+#start{
+    width: 70px;
+    background-color: #d7d7d7;
+    box-shadow: 0px 0px 18px -5px #777777;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+#start:hover{
+    opacity:0.8;
+    transform: translateY(5px);
+    box-shadow: none;
+}
+#stop{
+    width: 70px;
+    box-shadow: 0px 0px 18px -5px #777777;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+#stop:hover{
+    opacity:0.8;
+    transform: translateY(5px);
+    box-shadow: none;
+}
+
+
+
+
+
+.itemsount {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    margin: 0.5em 0;
+}
+.itemsount input {
+    max-width: 5em;
+}
+.itemsount input[type=number] {
+    text-align: right;
+}
+
+.stopwatch {
+    padding-bottom:  1px ;
+    background-color:  linear-gradient(to bottom right, #fff2f7d7, #ffe5d8);
+    border-radius: 0.3em;
+    margin: 0 auto;
+}
+
+.stopwatch,
+button {
+    max-width: 12em;
+    width: 90%;
+    border-radius: 7%;
+}
+
+.hide { display: none;
+}
+    
 
 
 #input{
@@ -275,6 +361,7 @@ textarea {
     box-shadow: 0px 0px 18px -5px #777777;
     cursor: pointer;
     transition: all 0.3s;
+    width: 210px;
 }
 #add:hover{
     opacity: 0.8;
@@ -307,6 +394,7 @@ textarea {
     box-shadow: 0px 0px 18px -5px #777777;
     cursor: pointer;
     transition: all 0.3s;
+    width: 60px;
 }
 .delete-button:hover{
     opacity: 0.8;
