@@ -83,7 +83,7 @@ window.addEventListener('DOMContentLoaded', function() {
       }else if(wordCount <= max){
        res =  `あと<span style="color:red";><b>${len2}</b></span>文字入力できます。`;
       } else if(wordCount > max){
-          res = `<span style="color:red";><b>${len}</b></span>文字オーバーしています。`;
+          res = `<span style="color:red";><b>${len}</b>文字オーバーしています。</span>`;
       }
       document.querySelector('#output').innerHTML = res;
   });
@@ -112,7 +112,7 @@ window.addEventListener('DOMContentLoaded', function() {
     }else if(wordCount <= max){
      res =  `あと<span style="color:red";><b>${len2}</b></span>文字入力できます。`;
     } else if(wordCount > max){
-        res = `<span style="color:red";><b>${len}</b></span>文字オーバーしています。`;
+        res = `<span style="color:red";><b>${len}</b>文字オーバーしています。</span>`;
     }
       document.querySelector('#output').innerHTML = res;
   });
@@ -142,7 +142,7 @@ window.addEventListener('DOMContentLoaded', function() {
     }else if(wordCount <= max){
      res =  `あと<span style="color:red";><b>${len2}</b></span>文字入力できます。`;
     } else if(wordCount > max){
-        res = `<span style="color:red";><b>${len}</b></span>文字オーバーしています。`;
+        res = `<span style="color:red";><b>${len}</b>文字オーバーしています。</span>`;
     }
       document.querySelector('#output').innerHTML = res;
   });
