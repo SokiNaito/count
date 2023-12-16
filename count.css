@@ -6,7 +6,7 @@
     text-align: center;
     max-width: 800px;
     margin: 0 auto;
-    background:  #edededd7;
+    background:  #dee9fff8;
 }
 
 .wrapper h1{
@@ -14,6 +14,9 @@
     color: #50535f;
     text-shadow: #fff 2px 0, #fff -2px 0, #fff 0 -2px, #fff 0 2px, #fff 2px 2px, #fff -2px 2px, #fff 2px -2px, #fff -2px -2px, #fff 1px 2px, #fff -1px 2px, #fff 1px -2px, #fff -1px -2px, #fff 2px 1px, #fff -2px 1px, #fff 2px -1px, #fff -2px -1px, rgba(0, 0, 0, .5) 3px 3px 3px;
 }
+
+
+
 
 
 .display_none {
@@ -25,9 +28,11 @@
 .dis_none_bt {
 	font-size: 16px;
     width: 160px;
+    border: 2px solid #b6b6b6;
     box-shadow: 0px 0px 18px -5px #777777;
     cursor: pointer;
     transition: all 0.3s;
+    border-radius: 1%;
 	}
 .dis_none_bt:hover{
         opacity:0.8;
@@ -42,7 +47,7 @@
 
 #start{
     width: 70px;
-    background-color: #d7d7d7;
+    background-color: #f0e9e9;
     box-shadow: 0px 0px 18px -5px #777777;
     cursor: pointer;
     transition: all 0.3s;
@@ -54,7 +59,7 @@
 }
 #stop{
     width: 70px;
-    box-shadow: 0px 0px 18px -5px #777777;
+    box-shadow: 0px 0px 18px -5px #f6e8e8;
     cursor: pointer;
     transition: all 0.3s;
 }
@@ -183,8 +188,6 @@ button {
     box-shadow: none;
 }
 
-
-
 .len2{
     color: crimson;
 }
@@ -197,6 +200,7 @@ button {
     box-shadow: 0px 0px 18px -5px #777777;
     transition: all 0.3s;
     background-color: #ee936c;
+    cursor:pointer;
 }
 #reset:hover{
     opacity:0.8;
@@ -212,6 +216,7 @@ button {
    box-shadow: 0px 0px 18px -5px #777777;
     transition: all 0.3s;
     background-color: #cde7b9;
+    cursor:pointer;
 }
 #kopi:hover{
     opacity:0.8;
@@ -354,8 +359,8 @@ textarea {
   }
 
 #add{
-    border: 2px solid #b84c00;
-    background-color: #e6c6af;
+    border: 2px solid #b6b6b6;
+    background-color: #eeeeee;
     height: 40px;
     border-radius: 10%;
     box-shadow: 0px 0px 18px -5px #777777;
