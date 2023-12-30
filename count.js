@@ -1,39 +1,68 @@
 window.addEventListener('DOMContentLoaded', function() {
 
+//------------ストップウォッチ------------//
+let [milliseconds, seconds, minutes, hours] = [0, 0, 0, 0];
+let timeRef = document.querySelector(".timer-display");
+let int = null;
 
 
-  //-----------ストップウォッチのコード-------------------//
-  const elementStart = document.querySelector('#start');
-  const elementStop = document.querySelector('#stop');
-  let intervalID;     // 定期処理用のID
+document.getElementById("start-timer").addEventListener('click', () => {
+    if(int !== null){
+        clearInterval(int);
+    }
+    int = setInterval(displayTimer, 10);
+});
 
-  elementStart.addEventListener('click', function() {
-      elementStart.classList.add('hide');     // 非表示
-      elementStop.classList.remove('hide');   // 表示
+document.getElementById("pause-timer").addEventListener("click", () => {
+    clearInterval(int);
+});
 
-      const timeStart = Date.now();   // 開始時間
+document.getElementById("reset-timer").addEventListener('click', () => {
+    clearInterval(int);
+    [millisecnds, seconds, minutes, hours] = [0, 0, 0, 0];
+    timeRef.innerHTML = " 00 : 00 : 00 : 000";
+});
 
-      intervalID = setInterval(function() {
-          // 差分時間の計算
-          const timeNow = Date.now();
-          const timeDiff = timeNow - timeStart; 
-          const sec = (timeDiff / 1000).toFixed(3);
+function displayTimer () {
+    milliseconds += 10;
+    if(milliseconds == 1000){
+        milliseconds = 0;
+        seconds++;
+    
+    if(seconds == 60) {
+        seconds = 0;
+        minutes++;
+    
+    if(minutes == 60){
+        minutes = 0;
+        hours++;
+    }
+}
+    }
+let h = hours < 10 ? "0" + hours : hours;
+let m = minutes < 10 ? "0" + minutes : minutes;
+let s = seconds < 10 ? "0" + seconds : seconds;
+let ms = milliseconds < 10
+? "00" + milliseconds
+: milliseconds < 100
+? "0" + milliseconds
+: milliseconds;
 
-          document.querySelector('#output0').innerHTML = `${sec}秒`;   // 出力
-      }, 1);
-  });
-
-  elementStop.addEventListener('click', function() {
-      elementStart.classList.remove('hide');  // 表示
-      elementStop.classList.add('hide');      // 非表示
-
-      clearInterval(intervalID);  // 定期処理の停止
-  });
+timeRef.innerHTML = `${h} : ${m} : ${s} : ${ms}`;
+}
 
 
+
+
+
+
+
+
+
+
+  //-----------経過時間----------//
   const displayNone = document.querySelector('.display_none');
 		const dis_none_bt = document.querySelector('.dis_none_bt');
-		
 		dis_none_bt.addEventListener('click' ,  () => {
 		if(displayNone.classList.contains('active')){
 			dis_none_bt.textContent ='⌛経過時間表示⌛';
@@ -48,7 +77,6 @@ window.addEventListener('DOMContentLoaded', function() {
 
 
 //----------リアルタイムカウント--------//
-
   const textArea = document.querySelector('#input');
   const length = document.querySelector('.length');
   //テキストエリアに入力された文字数をリアルタイムでカウント
@@ -57,8 +85,6 @@ window.addEventListener('DOMContentLoaded', function() {
   }, false);
   
 
-  
-  
   
   
   //200文字制限ボタン
@@ -227,86 +253,87 @@ function updateProgressBarFourth() {
 
 
 //----------------------------文章保存-------------------------------//
-  window.onload = function() {
-    loadSavedText();
+window.onload = function() {
+  loadSavedText();
+};
+
+// テキストエリアを追加する関数
+function addTextArea() {
+  let textareaContainer = document.getElementById('textareaContainer');
+  let wrapper = document.createElement('div');
+  wrapper.className = 'textarea-wrapper';
+  
+  let textarea = document.createElement('textarea');
+  let deleteButton = document.createElement('button');
+  deleteButton.textContent = '削除';
+  deleteButton.className = 'delete-button';
+  deleteButton.onclick = function() {
+    wrapper.remove();
   };
+ 
+  wrapper.appendChild(textarea);
+  wrapper.appendChild(deleteButton);
+  textareaContainer.appendChild(wrapper);
+};
+
+
+
+
+
+// テキストを保存する関数
+function saveText() {
+
+  let textareaWrappers = document.querySelectorAll('.textarea-wrapper');
+  let texts = [];
+
+  textareaWrappers.forEach(function(wrapper) {
+    let textarea = wrapper.querySelector('textarea');
+    texts.push(textarea.value);
+  });
+
+  // ローカルストレージに保存
+  localStorage.setItem('savedTexts', JSON.stringify(texts));
+  alert('テキストが保存されました！');
+};
+
+// 保存されたテキストを読み込む関数
+function loadSavedText() {
   
-  // テキストエリアを追加する関数
-  function addTextArea() {
-    let textareaContainer = document.getElementById('textareaContainer');
-    let wrapper = document.createElement('div');
-    wrapper.className = 'textarea-wrapper';
-    
-    let textarea = document.createElement('textarea');
-    let deleteButton = document.createElement('button');
-    deleteButton.textContent = '削除';
-    deleteButton.className = 'delete-button';
-    deleteButton.onclick = function() {
-      wrapper.remove();
-    };
-   
-    wrapper.appendChild(textarea);
-    wrapper.appendChild(deleteButton);
-    textareaContainer.appendChild(wrapper);
-  };
 
-  
+  //let textareaContainer = document.getElementById('textareaContainer');
+  let savedTexts = localStorage.getItem('savedTexts');
 
+  if (savedTexts) {
+    savedTexts = JSON.parse(savedTexts);
 
-  
-  // テキストを保存する関数
-  function saveText() {
-
-    let textareaWrappers = document.querySelectorAll('.textarea-wrapper');
-    let texts = [];
-
-    textareaWrappers.forEach(function(wrapper) {
-      let textarea = wrapper.querySelector('textarea');
-      texts.push(textarea.value);
+    savedTexts.forEach(function(text) {
+      addTextAreaWithText(text);
     });
+}};
 
-    // ローカルストレージに保存
-    localStorage.setItem('savedTexts', JSON.stringify(texts));
-    alert('テキストが保存されました！');
-  };
-  
-  // 保存されたテキストを読み込む関数
-  function loadSavedText() {
+
+// テキストを指定してテキストエリアを追加する関数
+function addTextAreaWithText(text) {
+  let textareaContainer = document.getElementById('textareaContainer');
+  let wrapper = document.createElement('div');
+  wrapper.className = 'textarea-wrapper';
+
+  let textarea = document.createElement('textarea');
+  textarea.value = text;
+
+  let deleteButton = document.createElement('button');
+  deleteButton.textContent = '削除';
+  deleteButton.className = 'delete-button';
+  deleteButton.onclick = function() {
     
+    if(window.confirm('本当に削除しますか？')) {
+      wrapper.remove();
+  }else{
+      window.alert('削除されませんでした'); 
+  }};
 
-    //let textareaContainer = document.getElementById('textareaContainer');
-    let savedTexts = localStorage.getItem('savedTexts');
-  
-    if (savedTexts) {
-      savedTexts = JSON.parse(savedTexts);
-  
-      savedTexts.forEach(function(text) {
-        addTextAreaWithText(text);
-      });
- }};
+  wrapper.appendChild(textarea);
+  wrapper.appendChild(deleteButton);
+  textareaContainer.appendChild(wrapper);
 
-  
-  // テキストを指定してテキストエリアを追加する関数
-  function addTextAreaWithText(text) {
-    let textareaContainer = document.getElementById('textareaContainer');
-    let wrapper = document.createElement('div');
-    wrapper.className = 'textarea-wrapper';
-  
-    let textarea = document.createElement('textarea');
-    textarea.value = text;
-  
-    let deleteButton = document.createElement('button');
-    deleteButton.textContent = '削除';
-    deleteButton.className = 'delete-button';
-    deleteButton.onclick = function() {
-      
-      if(window.confirm('本当に削除しますか？')) {
-        wrapper.remove();
-    }else{
-        window.alert('削除されませんでした'); 
-    }};
-  
-    wrapper.appendChild(textarea);
-    wrapper.appendChild(deleteButton);
-    textareaContainer.appendChild(wrapper);
-  };
+}
