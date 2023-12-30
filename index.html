@@ -19,10 +19,15 @@
             <br>
             <button class="dis_none_bt">⌛非表示⌛</button>
             <div class="display_none">
-                <div id="output0" class="stopwatch">0秒</div>
-                <div class="itemtime">
-                    <button id="start">スタート</button>
-                    <button id="stop" class="hide">ストップ</button>
+                <div class="container">
+                    <div class="timer-display">
+                        00 : 00 : 00 : 000
+                    </div>
+                    <div class="buttons">
+                        <button id="start-timer">Start</button>
+                        <button id="pause-timer">Pause</button>
+                        <button id="reset-timer">Reset</button>
+                    </div>
                 </div>
               </div>
               <br><br>
@@ -71,8 +76,14 @@
 
 
 <br><br>
+    
+
+    
+
 
     <h1>＜文章保存欄＞</h1>
+
+
 <div>
 <button id="add" onclick=" addTextArea()" >＋テキストエリア追加</button>
 </div>
@@ -88,6 +99,9 @@
   <button id="hozo" onclick=" saveText()" >保存</button>
 
 <br><br>
+
+
+
 
 </body>
 
