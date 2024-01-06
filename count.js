@@ -65,11 +65,11 @@ timeRef.innerHTML = `${h} : ${m} : ${s} : ${ms}`;
 		const dis_none_bt = document.querySelector('.dis_none_bt');
 		dis_none_bt.addEventListener('click' ,  () => {
 		if(displayNone.classList.contains('active')){
-			dis_none_bt.textContent ='⌛経過時間表示⌛';
+			dis_none_bt.textContent ='▼経過時間▼';
 			displayNone.style.display = 'none';
 			displayNone.classList.remove('active');
 		}else {
-			dis_none_bt.textContent ='⌛非表示⌛';
+			dis_none_bt.textContent ='▲経過時間▲';
 			displayNone.style.display = 'block';
 			displayNone.classList.add('active');
 		}
